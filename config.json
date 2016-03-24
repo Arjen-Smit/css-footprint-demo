@@ -1,0 +1,60 @@
+{
+    "default_tasks": [
+        "copy",
+        "icons",
+        "sass",
+        "javascript",
+        "webserver"
+    ],
+    "install_tasks": [],
+    "production": false,
+    "sass": {
+        "src": [
+            "style/*.scss"
+        ],
+        "dest": "web/assets/css",
+        "watch": [
+            "style/**/*.scss"
+        ],
+        "includePaths": [
+            "node_modules/materialize-css/sass/"
+        ],
+        "autoprefix": [
+            "last 2 versions"
+        ]
+    },
+    "javascript": {
+        "items": [
+            {
+                "src": [
+                    "node_modules/jquery/dist/jquery.js",
+                    "node_modules/materialize-css/dist/js/materialize.js",
+                    "javascript/init.js"
+                  ],
+                "outputname": "body.min.js",
+                "dest": "web/assets/javascript/"
+            }
+        ],
+        "watch": [
+            "javascript/**/*.js"
+        ]
+    },
+    "icons": {
+        "src": [
+            "icons/*.svg"
+        ],
+        "dest": "web/assets/fonts/",
+        "webpath": "/assets/fonts/"
+    },
+    "copy": {
+      "items": [
+          {
+              "src": "html/*",
+              "dest": "web/"
+          }, {
+              "src": "node_modules/materialize-css/font/roboto/*",
+              "dest": "web/assets/font/roboto/"
+          }
+      ]
+    }
+}
